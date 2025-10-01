@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberbullying Law Support</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f6fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #1d4ed8;
+        }
+
+        .chat-header {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header button {
+            background-color: #93c5fd;
+            border: none;
+            color: #1e3a8a;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-header button:hover {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+
+        .chat-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #93c5fd, #3b82f6, #2563eb);
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: linear-gradient(to bottom, #ffffff, #eff6ff);
+        }
+
+        .message {
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .message.bot {
+            flex-direction: row;
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        .message.bot .avatar {
+            background-image: url('../dist/assistance.webp'); /* Replace with bot avatar URL */
+        }
+
+        .message.user .avatar {
+            background-image: url('../user.webp');
+        }
+
+        .message .content {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.bot .content {
+            background-color: #e0f2fe;
+            color: #1e3a8a;
+        }
+
+        .message.user .content {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            background-color: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+            background-color: #f3f4f6;
+        }
+
+        .chat-footer button {
+            background-color: #1d4ed8;
+            border: none;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-footer button:hover {
+            background-color: #153e75;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>Cyberbullying Law Support</span>
+            <button onclick="returnToHome()">Return to Home</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot">
+                <div class="avatar"></div>
+                <div class="content">Welcome! Need help with cyberbullying laws? Ask your question.</div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type your question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const chatBody = document.getElementById('chatBody');
+
+            if (userInput.value.trim() === '') return;
+
+            // Display user message
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.innerHTML = `
+                <div class="avatar"></div>
+                <div class="content">${userInput.value}</div>
+            `;
+            chatBody.appendChild(userMessage);
+
+            // Display bot response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('message', 'bot');
+                botMessage.innerHTML = `
+                    <div class="avatar"></div>
+                    <div class="content">We'll get back to you shortly with an answer!</div>
+                `;
+                chatBody.appendChild(botMessage);
+
+                // Scroll to bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 500);
+
+            // Clear input field
+            userInput.value = '';
+        }
+
+        function returnToHome() {
+            window.location.href = 'index.html'; // Redirect to index.html
+        }
+    </script>
+</body>
+</html>

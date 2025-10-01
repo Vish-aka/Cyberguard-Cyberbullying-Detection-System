@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="page_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form class="login_form">
+        <h1 class="login_title">Sign Up</h1>
+
+        <div class="input_box">
+            <i class="fa-solid fa-user"></i>
+            <input type="name" id="name" placeholder="Full Name" required>
+        </div>
+
+
+        <div class="input_box">
+            <i class="fa-solid fa-user"></i>
+            <input type="email" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="input_box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+
+        <button class="login_btn">Sign Up</button>
+        <p class="register">
+            Already have an account? <a href="login.html">Login</a>
+        </p>
+
+        <div class="message_box"></div>
+    </form>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDMyVevSCSFCqFbDBOV-zY_IgzMniuX2d4",
+            authDomain: "login-97a23.firebaseapp.com",
+            projectId: "login-97a23",
+            storageBucket: "login-97a23.firebasestorage.app",
+            messagingSenderId: "494741600676",
+            appId: "1:494741600676:web:b100a87c9d5c3cc367e931"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const btn = document.querySelector(".login_btn");
+        const messageBox = document.querySelector(".message_box");
+
+        btn.addEventListener("click", function(event) {
+            event.preventDefault();
+            const emailValue = email.value;
+            const passwordValue = password.value;
+            
+            createUserWithEmailAndPassword(auth, emailValue, passwordValue)
+            .then((userCredential) => {
+                messageBox.textContent = "Account successfully created!";
+                messageBox.classList.remove("error");
+                messageBox.classList.add("created");
+                
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 2000);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                messageBox.classList.add("error");
+                if (errorCode === "auth/email-already-in-use") {
+                    messageBox.textContent = "This email is already registered!";
+                } else if (errorCode === "auth/invalid-email") {
+                    messageBox.textContent = "The email format is incorrect!";
+                } else if (errorCode === "auth/weak-password") {
+                    messageBox.textContent = "The password must be at least 6 characters!";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

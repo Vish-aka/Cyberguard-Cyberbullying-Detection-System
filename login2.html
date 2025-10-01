@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../scss/style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-left">
+        <h2>Login</h2>
+        <form action="login_process.php" method="post">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <button type="submit" class="btn-primary">Login</button>
+            <div class="form-link">
+                <p><a href="forgot-password.html">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+               <p><a href="index.html" class="home-link">Back to Home</a></p> 
+            </div>
+        </form>
+    </div>
+    <div class="form-right">
+        <p>Welcome back! Please enter your login details to continue using CyberGuard.</p>
+    </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f2f6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav .home-link {
+            color: #ecf0f1;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav .home-link:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Contact Container */
+        .contact-container {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #2980b9;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Team Member Styles */
+        .team-member {
+            background-color: #fff;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member-img:hover {
+            transform: scale(1.1);
+        }
+
+        .team-member h2 {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .team-member a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .team-member a:hover {
+            color: #2980b9;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .team-member {
+                width: 100%;
+                max-width: 90%;
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 40px 10px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .team-member h2 {
+                font-size: 22px;
+            }
+
+            .team-member p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="home-link">Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <h1>Meet Our Team</h1>
+        
+        <div class="team-member" id="member1">
+           
+            <h2>Neethu Benny</h2>
+            <p>Email: <a href="mailto:neethubenny282@gmail.com">neethubenny282@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91 7510254194">+91 7510254194</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/neethubenny" target="_blank">Neethu</a></p>
+        </div>
+
+        <div class="team-member" id="member2">
+           
+            <h2>Neharin Tijo</h2>
+            <p>Email: <a href="mailto:neharintijo@gmail.com">neharintijo@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91 8921542435">+91 8921542435</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/neharintijo" target="_blank">Neharin</a></p>
+        </div>
+
+        <div class="team-member" id="member3">
+           
+            <h2>Sani Anna</h2>
+            <p>Email: <a href="mailto:sanosani043@gmail.com">sanosani043@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91 8590428591">+91 8590428591</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sanivarghese" target="_blank">Sani</a></p>
+        </div>
+
+        <div class="team-member" id="member4">
+            
+            <h2>Vishaka Manoj</h2>
+            <p>Email: <a href="mailto:vishakamanojkavalam@gmail.com">vishakamanojkavalam@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91 8129532144">+91 8129532144</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vishaka-manoj-534574227" target="_blank">Vishaka</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

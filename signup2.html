@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../scss/style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-left">
+        <h2>Sign Up</h2>
+        <form action="signup_process.php" method="post">
+            <input type="text" class="form-control" placeholder="Full Name" name="fullname" required>
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
+            <input type="password" class="form-control" placeholder="Password" name="password" required>
+            <button type="submit" class="btn-primary">Sign Up</button>
+            <div class="form-link">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+                <p><a href="index.html" class="home-link">Back to Home</a></p> 
+            </div>
+        </form>
+    </div>
+    <div class="form-right">
+        <p>Create an account to enjoy all the features of CyberGuard!</p>
+    </div>
+</div>
+
+</body>
+</html>

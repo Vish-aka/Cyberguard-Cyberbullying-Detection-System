@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Integration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .chatbot-box {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .chatbot-box h2 {
+            color: #0078D7;
+            font-size: 24px;
+        }
+
+        .chatbot-box p {
+            color: #333;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .start-chat {
+            padding: 10px 20px;
+            background-color: #0078D7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .start-chat:hover {
+            background-color: #005BB5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Website!</h1>
+        <p>Explore our features and connect with our smart assistant.</p>
+
+        <!-- Chatbot Box -->
+        <div class="chatbot-box">
+            <h2>Meet CyberGuard!</h2>
+            <p>CyberGuard is here to assist you with all your queries. Just click the button below to get started!</p>
+            <button class="start-chat" onclick="startChat()">Start Chat</button>
+        </div>
+    </div>
+
+    <script>
+        function startChat() {
+            alert("Chatbot is initializing... Let's chat!");
+        }
+    </script>
+</body>
+</html>
